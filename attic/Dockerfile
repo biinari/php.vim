@@ -1,8 +1,8 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
 MAINTAINER Stan Angeloff "stanimir@psp-webtech.co.uk"
 
-ENV UBUNTU_RELEASE=bionic \
+ENV UBUNTU_RELEASE=noble \
     ONDREJ_PHP_KEY="14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
 
 RUN apt-get update && apt-get install -y gnupg2 && \
