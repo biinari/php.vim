@@ -23,7 +23,6 @@ apt-get install -y \
   "php${PHP_VERSION}-sockets" \
   "php${PHP_VERSION}-sqlite3" \
   "php${PHP_VERSION}-tokenizer" \
-  "php${PHP_VERSION}-wddx" \
   "php${PHP_VERSION}-xml" \
   "php${PHP_VERSION}-xmlreader" \
   "php${PHP_VERSION}-xmlwriter" \
@@ -32,5 +31,11 @@ apt-get install -y \
 case $PHP_VERSION in
   5.6 | 7.0 | 7.1)
     apt-get install -y "php${PHP_VERSION}-mcrypt"
+    ;;
+esac
+
+case $PHP_VERSION in
+  5.6 | 7.0 | 7.1 | 7.2 | 7.3)
+    apt-get install -y "php${PHP_VERSION}-wddx"
     ;;
 esac
