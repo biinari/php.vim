@@ -681,7 +681,7 @@ syn case match
 " HereDoc
 if version >= 704
   if b:php_version_id >= 70300
-    " @begin phpHereDoc
+    " @begin phpHereDoc_php73
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@3<=\s*\z(\I\i*\)$" end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     SynFold syn region phpHereDoc matchgroup=Delimiter start=+\(<<<\)\@3<=\s*"\z(\I\i*\)"$+ end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     " including HTML,JavaScript,SQL if enabled via options
@@ -695,7 +695,7 @@ if version >= 704
     if (exists("php_xml_heredoc") && php_xml_heredoc)
       SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@3<=\s*\z(\(\I\i*\)\=\(xml\)\c\(\i*\)\)$" end="^\s*\z1\>" contained contains=@xmlTop,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     endif
-    " @end phpHereDoc
+    " @end phpHereDoc_php73
   else
     " @begin phpHereDoc
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@3<=\s*\z(\I\i*\)$" end="^\z1\(;\=$\)\@=" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
@@ -711,11 +711,11 @@ if version >= 704
     if (exists("php_xml_heredoc") && php_xml_heredoc)
       SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@3<=\s*\z(\(\I\i*\)\=\(xml\)\c\(\i*\)\)$" end="^\z1\(;\=$\)\@=" contained contains=@xmlTop,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     endif
-  " @end phpHereDoc
+    " @end phpHereDoc
   endif
 else
   if b:php_version_id >= 70300
-    " @copy phpHereDoc strip_maximum_size
+    " @copy phpHereDoc_php73 strip_maximum_size
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\I\i*\)$" end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     SynFold syn region phpHereDoc matchgroup=Delimiter start=+\(<<<\)\@<=\s*"\z(\I\i*\)"$+ end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     " including HTML,JavaScript,SQL if enabled via options
@@ -729,7 +729,7 @@ else
     if (exists("php_xml_heredoc") && php_xml_heredoc)
       SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\(\I\i*\)\=\(xml\)\c\(\i*\)\)$" end="^\s*\z1\>" contained contains=@xmlTop,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     endif
-    " @end phpHereDoc
+    " @end phpHereDoc_php73
   else
     " @copy phpHereDoc strip_maximum_size
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\I\i*\)$" end="^\z1\(;\=$\)\@=" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
@@ -752,7 +752,7 @@ endif
 " NowDoc
 if version >= 704
   if b:php_version_id >= 70300
-  " @begin phpNowDoc
+    " @begin phpNowDoc_php73
     SynFold syn region phpNowDoc matchgroup=Delimiter start=+\(<<<\)\@3<=\s*'\z(\I\i*\)'$+ end="^\s*\z1\>" contained keepend extend
     " including HTML,JavaScript,SQL if enabled via options
     if (exists("php_html_in_nowdoc") && php_html_in_nowdoc)
@@ -765,7 +765,7 @@ if version >= 704
     if (exists("php_xml_nowdoc") && php_xml_nowdoc)
       SynFold syn region phpNowDoc matchgroup=Delimiter start=+\(<<<\)\@3<=\s*'\z(\(\I\i*\)\=\(xml\)\c\(\i*\)\)'$+ end="^\s*\z1\>" contained contains=@xmlTop,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     endif
-  " @end phpNowDoc
+    " @end phpNowDoc_php73
   else
     " @begin phpNowDoc
     SynFold syn region phpNowDoc matchgroup=Delimiter start=+\(<<<\)\@3<=\s*'\z(\I\i*\)'$+ end="^\z1\(;\=$\)\@=" contained keepend extend
@@ -784,7 +784,7 @@ if version >= 704
   endif
 else
   if b:php_version_id >= 70300
-    " @copy phpHereDoc strip_maximum_size
+    " @copy phpHereDoc_php73 strip_maximum_size
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\I\i*\)$" end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     SynFold syn region phpHereDoc matchgroup=Delimiter start=+\(<<<\)\@<=\s*"\z(\I\i*\)"$+ end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     " including HTML,JavaScript,SQL if enabled via options
@@ -798,7 +798,7 @@ else
     if (exists("php_xml_heredoc") && php_xml_heredoc)
       SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\(\I\i*\)\=\(xml\)\c\(\i*\)\)$" end="^\s*\z1\>" contained contains=@xmlTop,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
     endif
-    " @end phpNowDoc
+    " @end phpNowDoc_php73
   else
     " @copy phpHereDoc strip_maximum_size
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@<=\s*\z(\I\i*\)$" end="^\z1\(;\=$\)\@=" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
