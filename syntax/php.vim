@@ -657,7 +657,7 @@ if !exists("php_ignore_phpdoc") || !php_ignore_phpdoc
   syn case match
 endif
 
-if version >= 600
+if v:version >= 600
   syn match phpComment  "#.\{-}\(?>\|$\)\@="  contained contains=phpTodo,@Spell
   syn match phpComment  "//.\{-}\(?>\|$\)\@=" contained contains=phpTodo,@Spell
 else
@@ -681,7 +681,7 @@ endif
 syn case match
 
 " HereDoc
-if version >= 704
+if v:version >= 704
   if b:php_version_id >= 70300
     " @begin phpHereDoc_php73
     SynFold syn region phpHereDoc matchgroup=Delimiter start="\(<<<\)\@3<=\s*\z(\I\i*\)$" end="^\s*\z1\>" contained contains=@Spell,phpIdentifier,phpIdentifierSimply,phpIdentifierComplex,phpSpecialChar,phpMethodsVar,phpStrEsc keepend extend
@@ -752,7 +752,7 @@ else
 endif
 
 " NowDoc
-if version >= 704
+if v:version >= 704
   if b:php_version_id >= 70300
     " @begin phpNowDoc_php73
     SynFold syn region phpNowDoc matchgroup=Delimiter start=+\(<<<\)\@3<=\s*'\z(\I\i*\)'$+ end="^\s*\z1\>" contained keepend extend
