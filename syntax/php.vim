@@ -553,7 +553,7 @@ endif
 syntax keyword phpClasses containedin=ALLBUT,phpComment,phpDocComment,phpStringDouble,phpStringSingle,phpIdentifier,phpMethodsVar
 
 " Control Structures
-syn keyword phpKeyword echo continue case default break return goto as endif endwhile endfor endforeach endswitch declare endeclare print new clone yield fn contained
+syn keyword phpKeyword echo continue case default break return goto as endif endwhile endfor endforeach endswitch declare endeclare print new clone yield fn match contained
 " Only create keyword groupings for these if not doing folding, otherwise they take precedence over the regions
 " used for folding.
 if php_folding != 1
