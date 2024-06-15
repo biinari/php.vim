@@ -8,6 +8,7 @@
 " @endblock
 "
 " Maintainer: Bill Ruddock <bill.ruddock@gmail.com>
+" URL: https://github.com/biinari/php.vim
 "
 " Former Maintainer: Paul Garvin <paul@paulgarvin.net>
 "

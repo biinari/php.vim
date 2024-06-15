@@ -18,13 +18,13 @@ Installation
 If you don't have a preferred installation method, [vim-plug] is quick and simple. With [vim-plug installed], add the following to your `vimrc` (if you are a NeoVim user, see the [FAQ page][neovim-faq] for help):
 
 ```vim
-Plug 'StanAngeloff/php.vim'
+Plug 'biinari/php.vim'
 ```
 
 If you are using Git, please be aware [the original repository this project was forked from][php.vim-garvin] contains bad timezone in some of the commits. You'll need to fetch with `fsckObjects` disabled:
 
 ```sh
-git clone -c fetch.fsckObjects=false git@github.com:StanAngeloff/php.vim.git
+git clone -c fetch.fsckObjects=false git@github.com:biinari/php.vim.git
 ```
 
 Unless you specify `-c fetch.fsckObjects=false` as an option to `git clone`, you may see `badTimezone: invalid author/committer line - bad time zone` in the output and the cloning will [fail](https://github.com/StanAngeloff/php.vim/issues/96).
