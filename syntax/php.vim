@@ -686,15 +686,8 @@ if !exists("php_ignore_phpdoc") || !php_ignore_phpdoc
   syn case match
 endif
 
-if v:version >= 600
-  syn match phpComment  "#.\{-}\(?>\|$\)\@="  contained contains=phpTodo,@Spell
-  syn match phpComment  "//.\{-}\(?>\|$\)\@=" contained contains=phpTodo,@Spell
-else
-  syn match phpComment  "#.\{-}$" contained contains=phpTodo,@Spell
-  syn match phpComment  "#.\{-}?>"me=e-2  contained contains=phpTodo,@Spell
-  syn match phpComment  "//.\{-}$"  contained contains=phpTodo,@Spell
-  syn match phpComment  "//.\{-}?>"me=e-2 contained contains=phpTodo,@Spell
-endif
+syn match phpComment  "#.\{-}\(?>\|$\)\@="  contained contains=phpTodo,@Spell
+syn match phpComment  "//.\{-}\(?>\|$\)\@=" contained contains=phpTodo,@Spell
 
 " String
 if (exists("php_parent_error_open") && php_parent_error_open)
