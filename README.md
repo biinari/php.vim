@@ -8,7 +8,7 @@ _This project is a fork of [php.vim--Garvin][php.vim-garvin] which in turn is an
 Versions
 --------
 
-`php.vim` should work with Vim 5.4 and newer. Performance improvements target Vim 7.4 and newer.
+`php.vim` should work with Vim 7.0 and newer.
 
 Also works with other flavours like NeoVim.
 
