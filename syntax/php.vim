@@ -686,7 +686,7 @@ if !exists("php_ignore_phpdoc") || !php_ignore_phpdoc
   syn case match
 endif
 
-syn match phpComment  "#.\{-}\(?>\|$\)\@="  contained contains=phpTodo,@Spell
+syn match phpComment  "#\[\@!.\{-}\(?>\|$\)\@="  contained contains=phpTodo,@Spell
 syn match phpComment  "//.\{-}\(?>\|$\)\@=" contained contains=phpTodo,@Spell
 
 " String
