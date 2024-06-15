@@ -1041,7 +1041,7 @@ let b:current_syntax = "php"
 let &iskeyword = s:iskeyword_save
 unlet s:iskeyword_save
 
-if (exists("main_syntax") && main_syntax == 'php')
+if (exists("main_syntax") && main_syntax ==# 'php')
   unlet main_syntax
 endif
 
