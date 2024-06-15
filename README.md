@@ -8,9 +8,9 @@ _This project is a fork of [StanAngeloff/php.vim] which is a fork of [php.vim--G
 Versions
 --------
 
-`php.vim` should work with Vim 7.0 and newer.
+`php.vim` should work with Vim 7.0 and newer. Also works with other flavours like NeoVim.
 
-Also works with other flavours like NeoVim.
+Supported versions of PHP: `5.6` to `8.0`.
 
 Installation
 ------------
