@@ -578,7 +578,7 @@ syn keyword phpKeyword die exit eval empty isset unset list instanceof insteadof
 syn keyword phpInclude include include_once require require_once namespace contained
 
 " Types
-syn keyword phpType bool[ean] int[eger] real double float string array object self parent global this stdClass callable iterable void mixed enum contained
+syn keyword phpType bool[ean] int[eger] real double float string array object self parent global this stdClass callable iterable void mixed enum never contained
 " Special values
 syn keyword phpNullValue null contained
 
