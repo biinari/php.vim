@@ -593,19 +593,35 @@ syn region phpIdentifierComplex  matchgroup=phpParent start="{\$"rs=e-1 end="}" 
 " Boolean
 syn keyword phpBoolean true false  contained
 
-" Number
-syn match phpNumber "\<\d\+\>" contained display
-syn match phpNumber "-\d\+\>" contained display
-syn match phpNumber "\<0x\x\{1,8}\>"  contained display
-syn match phpNumber "-0x\x\{1,8}\>"  contained display
-syn match phpNumber "\<0b[01]\+\>"    contained display
-syn match phpNumber "-0b[01]\+\>"    contained display
-syn match phpNumber "\<\d\+\%([eE][+-]\=\d\+\)\=\>" contained display
-syn match phpNumber "-\d\+\%([eE][+-]\=\d\+\)\=\>" contained display
+if b:php_version_id >= 70400
+  " Number
+  syn match phpNumber "\<\d\+\%(_\d\+\)*\>" contained display
+  syn match phpNumber "-\d\+\%(_\d\+\)*\>" contained display
+  syn match phpNumber "\<0x\x\+\%(_\x\+\)*\>"  contained display
+  syn match phpNumber "-0x\x\+\%(_\x\+\)*\>"  contained display
+  syn match phpNumber "\<0b[01]\+\%(_[01]\+\)*\>"    contained display
+  syn match phpNumber "-0b[01]\+\%(_[01]\+\)*\>"    contained display
+  syn match phpNumber "\<\d\+\%(_\d\+\)*\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
+  syn match phpNumber "-\d\+\%(_\d\+\)*\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
 
-" Float
-syn match phpNumber "\<\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>" contained display
-syn match phpNumber "-\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>" contained display
+  " Float
+  syn match phpNumber "\<\%(\d\+\%(_\d\+\)*\.\d\+\%(_\d\+\)*\|\d\+\%(_\d\+\)*\.\|\.\d\+\%(_\d\+\)*\)\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
+  syn match phpNumber "-\%(\d\+\%(_\d\+\)*\.\d\+\%(_\d\+\)*\|\d\+\%(_\d\+\)*\.\|\.\d\+\%(_\d\+\)*\)\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
+else
+  " Number
+  syn match phpNumber "\<\d\+\>" contained display
+  syn match phpNumber "-\d\+\>" contained display
+  syn match phpNumber "\<0x\x\{1,8}\>"  contained display
+  syn match phpNumber "-0x\x\{1,8}\>"  contained display
+  syn match phpNumber "\<0b[01]\+\>"    contained display
+  syn match phpNumber "-0b[01]\+\>"    contained display
+  syn match phpNumber "\<\d\+\%([eE][+-]\=\d\+\)\=\>" contained display
+  syn match phpNumber "-\d\+\%([eE][+-]\=\d\+\)\=\>" contained display
+
+  " Float
+  syn match phpNumber "\<\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>" contained display
+  syn match phpNumber "-\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>" contained display
+end
 
 " SpecialChar
 syn match phpSpecialChar "\\[fnrtv\\]" contained display
