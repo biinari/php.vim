@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: PHP 5.3 & up
+" Language: PHP 5.6 & up
 "
 " @block('Last-modified')
 "
