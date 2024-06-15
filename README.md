@@ -5,6 +5,13 @@ An up-to-date Vim syntax for PHP.
 
 _This project is a fork of [php.vim--Garvin][php.vim-garvin] which in turn is an update of the [php.vim][php.vim-original] script which in turn is an updated version of the php.vim syntax file distributed with Vim. **Whew!**_
 
+Versions
+--------
+
+`php.vim` should work with Vim 5.4 and newer. Performance improvements target Vim 7.4 and newer.
+
+Also works with other flavours like NeoVim.
+
 Installation
 ------------
 
