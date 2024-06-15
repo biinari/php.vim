@@ -190,7 +190,7 @@ endif
 
 " set default global php version
 if !exists('g:php_version_id')
-  let g:php_version_id = 80000
+  let g:php_version_id = 80100
 endif
 
 " set default buffer level php version
