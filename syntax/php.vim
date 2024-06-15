@@ -902,6 +902,9 @@ syn keyword phpKeyword function contained
       \ nextgroup=phpFunction skipwhite skipempty
 syn match phpFunction /\h\w*/ contained
 
+" PHP 8 Attribute
+syn region phpAttribute matchgroup=Delimiter start="^\s*#\[" end="\]$" contained display contains=@phpClConst,phpParent,phpParentError transparent
+
 " PHP 7 Generator & delegation via yield from
 "
 " See https://www.php.net/manual/en/language.generators.syntax.php#control-structures.yield
@@ -914,9 +917,9 @@ syn match phpYieldFromKeyword /\<from\>/ contained
 " Clusters
 syn cluster phpClConst contains=phpFunctions,phpClasses,phpStaticClasses,phpIdentifier,phpStatement,phpKeyword,phpOperator,phpSplatOperator,phpStringSingle,phpStringDouble,phpBacktick,phpNumber,phpType,phpNullValue,phpBoolean,phpStructure,phpMethodsVar,phpConstants,phpException,phpSuperglobals,phpMagicConstants,phpServerVars
 syn cluster phpClInside contains=@phpClConst,phpComment,phpDocComment,phpParent,phpParentError,phpInclude,phpHereDoc,phpNowDoc
-syn cluster phpClFunction contains=@phpClInside,phpDefine,phpParentError,phpStorageClass,phpKeyword
+syn cluster phpClFunction contains=@phpClInside,phpAttribute,phpDefine,phpParentError,phpStorageClass,phpKeyword
 syn cluster phpClControl contains=phpFoldIfContainer,phpFoldWhile,phpFoldDoWhile,phpFoldFor,phpFoldForeach,phpFoldTryContainer,phpFoldSwitch
-syn cluster phpClTop contains=@phpClFunction,@phpClControl,phpFoldFunction,phpFoldClass,phpFoldInterface,phpFoldHtmlInside
+syn cluster phpClTop contains=@phpClFunction,@phpClControl,phpAttribute,phpFoldFunction,phpFoldClass,phpFoldInterface,phpFoldHtmlInside
 
 " Php Region
 if (exists("php_parent_error_open") && php_parent_error_open)
@@ -1022,6 +1025,7 @@ if !exists("did_php_syn_inits")
   hi def link phpType             Type
   hi def link phpNullValue        phpType
   hi def link phpParent           Special
+  hi def link phpAttribute        phpParent
   hi def link phpSpecialChar      SpecialChar
   hi def link phpStrEsc           SpecialChar
   hi def link phpParentError      Error
