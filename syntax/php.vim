@@ -7,9 +7,11 @@
 "
 " @endblock
 "
-" Maintainer: Paul Garvin <paul@paulgarvin.net>
+" Maintainer: Bill Ruddock <bill.ruddock@gmail.com>
 "
-" Contributor: Stan Angeloff <stanimir@angeloff.name>
+" Former Maintainer: Paul Garvin <paul@paulgarvin.net>
+"
+" Former Maintainer: Stan Angeloff <stanimir@angeloff.name>
 " URL: https://github.com/StanAngeloff/php.vim
 "
 " Contributor: Alessandro Antonello <aleantonello@hotmail.com>
