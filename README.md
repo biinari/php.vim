@@ -3,7 +3,7 @@ php.vim
 
 An up-to-date Vim syntax for PHP.
 
-_This project is a fork of [php.vim--Garvin][php.vim-garvin] which in turn is an update of the [php.vim][php.vim-original] script which in turn is an updated version of the php.vim syntax file distributed with Vim. **Whew!**_
+_This project is a fork of [StanAngeloff/php.vim] which is a fork of [php.vim--Garvin][php.vim-garvin] which in turn is an update of the [php.vim][php.vim-original] script which in turn is an updated version of the php.vim syntax file distributed with Vim. **Whew!**_
 
 Versions
 --------
@@ -139,6 +139,7 @@ mv syntax/php.vim.new syntax/php.vim
 NOTE: If the updated syntax file fails to load and is corrupted, try loading `syntax/php.vim` in your favourite editor and ensure line endings are set to Unix `\n`.
 
 
+  [StanAngeloff/php.vim]: https://github.com/StanAngeloff/php.vim
   [php.vim-garvin]:  https://github.com/vim-scripts/php.vim--Garvin
   [php.vim-original]: http://www.vim.org/scripts/script.php?script_id=2874
   [vim-plug]: https://github.com/junegunn/vim-plug
