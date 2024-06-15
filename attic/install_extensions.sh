@@ -11,7 +11,6 @@ apt-get install -y \
   "php${PHP_VERSION}-gd" \
   "php${PHP_VERSION}-gettext" \
   "php${PHP_VERSION}-iconv" \
-  "php${PHP_VERSION}-json" \
   "php${PHP_VERSION}-mbstring" \
   "php${PHP_VERSION}-mysql" \
   "php${PHP_VERSION}-mysqli" \
@@ -37,5 +36,11 @@ esac
 case $PHP_VERSION in
   5.6 | 7.0 | 7.1 | 7.2 | 7.3)
     apt-get install -y "php${PHP_VERSION}-wddx"
+    ;;
+esac
+
+case $PHP_VERSION in
+  5.* | 7.*)
+    apt-get install -y "php${PHP_VERSION}-json"
     ;;
 esac
