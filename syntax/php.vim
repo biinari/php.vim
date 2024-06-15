@@ -605,8 +605,8 @@ if b:php_version_id >= 70400
   syn match phpNumber "-\d\+\%(_\d\+\)*\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
 
   " Float
-  syn match phpNumber "\<\%(\d\+\%(_\d\+\)*\.\d\+\%(_\d\+\)*\|\d\+\%(_\d\+\)*\.\|\.\d\+\%(_\d\+\)*\)\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
-  syn match phpNumber "-\%(\d\+\%(_\d\+\)*\.\d\+\%(_\d\+\)*\|\d\+\%(_\d\+\)*\.\|\.\d\+\%(_\d\+\)*\)\%([eE][+-]\=\d\+\%(_\d\+\)*\)\=\>" contained display
+  syn match phpNumber "\<\%(\d[_\d]*\.\d[_\d]*\|\d[_\d]*\.\|\.\d[_\d]*\)\%([eE][+-]\=\d[_\d]*\)\=\>" contained display
+  syn match phpNumber "-\%(\d[_\d]*\.\d[_\d]*\|\d[_\d]*\.\|\.\d[_\d]*\)\%([eE][+-]\=\d[_\d]*\)\=\>" contained display
 else
   " Number
   syn match phpNumber "\<\d\+\>" contained display
