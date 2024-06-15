@@ -146,5 +146,5 @@ NOTE: If the updated syntax file fails to load and is corrupted, try loading `sy
   [neovim-faq]: https://github.com/neovim/neovim/wiki/FAQ#where-should-i-put-my-config-vimrc
   [php.vim-source]: https://github.com/biinari/php.vim/blob/master/syntax/php.vim#L38
   [Blade]: https://github.com/jwalton512/vim-blade
-  [syntax-groups]: https://github.com/StanAngeloff/php.vim/blob/41c36f7f/syntax/php.vim#L804
+  [syntax-groups]: https://github.com/biinari/php.vim/blob/46eecd91/syntax/php.vim#L966
   [Docker Hub]: https://docs.docker.com/samples/library/php/
