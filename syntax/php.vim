@@ -902,7 +902,7 @@ syn keyword phpKeyword function contained
 syn match phpFunction /\h\w*/ contained
 
 " PHP 8 Attribute
-syn region phpAttribute matchgroup=Delimiter start="^\s*#\[" end="\]$" contained display contains=@phpClConst,phpParent,phpParentError transparent
+syn region phpAttribute matchgroup=Delimiter start="#\[" end="\]" contained display contains=@phpClConst,phpParent,phpParentError transparent
 
 " PHP 7 Generator & delegation via yield from
 "
