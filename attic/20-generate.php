@@ -6,6 +6,7 @@ $extensions = [];
 $versions = [];
 
 while (false !== $line = fgets(STDIN)) {
+    $line = rtrim($line);
     $unserialized = unserialize($line, ['allowed_classes' => false]);
     foreach ($unserialized as $extension => &$collected) {
         if (! isset($extensions[$extension])) {
