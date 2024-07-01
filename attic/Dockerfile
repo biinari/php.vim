@@ -15,9 +15,6 @@ COPY attic/install_extensions.sh /usr/local/bin/install_extensions
 
 RUN chmod +x /usr/local/bin/install_extensions \
   && install_extensions 5.6 \
-  && install_extensions 7.0 \
-  && install_extensions 7.1 \
-  && install_extensions 7.2 \
   && install_extensions 7.3 \
   && install_extensions 7.4 \
   && install_extensions 8.0 \
