@@ -10,7 +10,7 @@ Versions
 
 `php.vim` should work with Vim 7.0 and newer. Also works with other flavours like NeoVim.
 
-Supported versions of PHP: `5.6` to `8.0`.
+Supported versions of PHP: `5.6` to `8.2`.
 
 Installation
 ------------
