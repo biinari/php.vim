@@ -21,6 +21,7 @@ RUN chmod +x /usr/local/bin/install_extensions \
   && install_extensions 8.1 \
   && install_extensions 8.2 \
   && install_extensions 8.3 \
+  && install_extensions 8.4 \
   ;
 
 ADD attic/ /var/php
