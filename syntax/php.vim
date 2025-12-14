@@ -3,7 +3,7 @@
 "
 " @block('Last-modified')
 "
-" Fri, 05 Sep 2025 16:56:14 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.25, 8.4.12
+" Sun, 14 Dec 2025 21:27:03 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15
 "
 " @endblock
 "
@@ -890,13 +890,15 @@ syntax match phpClassDelimiter contained
 " use statement
 syn match phpUseNamespaceSeparator "\\" contained display
 syn keyword phpInclude use contained
-      \ nextgroup=phpUseFunction,phpUseClass skipwhite skipempty
+      \ nextgroup=phpUseConst,phpUseFunction,phpUseClass skipwhite skipempty
+syn match phpUseConst /const\_s\+\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseKeyword,phpUseNamespaceSeparator
+      \ nextgroup=phpUseAlias skipwhite skipempty
 syn match phpUseFunction /function\_s\+\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseKeyword
       \ nextgroup=phpUseAlias skipwhite skipempty
-syn match phpUseClass /\(function\_s\+\)\@!\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseNamespaceSeparator
+syn match phpUseClass /\(const\_s\+\|function\_s\+\)\@!\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseNamespaceSeparator
       \ nextgroup=phpUseAlias skipwhite skipempty
 syn match phpUseAlias /as\_s\+\h\w*/ contained contains=phpUseKeyword
-syn match phpUseKeyword /\(function\|as\)\_s\+/ contained contains=phpKeyword
+syn match phpUseKeyword /\(function\|const\|as\)\_s\+/ contained contains=phpKeyword,phpType
 
 " Function name
 syn keyword phpKeyword function contained
