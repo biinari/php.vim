@@ -37,7 +37,7 @@ Configuration
 - `g:php_version_id`,
   `b:php_version_id`
   
-  Default: `g:php_version_id = 70300`
+  Default: `g:php_version_id = 80400`
   
   The PHP version the Vim syntax should adhere to. This currently determines how strict [Heredoc/Nowdoc syntax](https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.core.heredoc) should be. The format of the Vim variable follows the [PHP predefined constant `PHP_VERSION_ID`](https://www.php.net/manual/en/reserved.constants.php#constant.php-version-id).
 
