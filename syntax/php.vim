@@ -3,7 +3,7 @@
 "
 " @block('Last-modified')
 "
-" Mon, 15 Dec 2025 20:31:17 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
+" Mon, 15 Dec 2025 21:22:44 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
 "
 " @endblock
 "
@@ -227,7 +227,7 @@ syn keyword phpServerVars GATEWAY_INTERFACE SERVER_NAME SERVER_SOFTWARE SERVER_P
 " @block('Extensions')
 
 if ! exists("g:php_syntax_extensions_enabled")
-    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mhash", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
+    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
 endif
 if ! exists("g:php_syntax_extensions_disabled")
     let g:php_syntax_extensions_disabled = []
