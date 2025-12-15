@@ -3,7 +3,7 @@
 "
 " @block('Last-modified')
 "
-" Mon, 15 Dec 2025 18:06:46 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
+" Mon, 15 Dec 2025 20:31:17 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
 "
 " @endblock
 "
@@ -227,7 +227,7 @@ syn keyword phpServerVars GATEWAY_INTERFACE SERVER_NAME SERVER_SOFTWARE SERVER_P
 " @block('Extensions')
 
 if ! exists("g:php_syntax_extensions_enabled")
-    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mhash", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
+    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mhash", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
 endif
 if ! exists("g:php_syntax_extensions_disabled")
     let g:php_syntax_extensions_disabled = []
@@ -248,6 +248,10 @@ endif
 if index(g:php_syntax_extensions_enabled, "dom") >= 0 && index(g:php_syntax_extensions_disabled, "dom") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "dom") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "dom") < 0)
 " dom constants
 syn keyword phpConstants AfterBegin AfterEnd BeforeBegin BeforeEnd DOCUMENT_POSITION_CONTAINED_BY DOCUMENT_POSITION_CONTAINS DOCUMENT_POSITION_DISCONNECTED DOCUMENT_POSITION_FOLLOWING DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC DOCUMENT_POSITION_PRECEDING DOMSTRING_SIZE_ERR DOM_HIERARCHY_REQUEST_ERR DOM_INDEX_SIZE_ERR DOM_INUSE_ATTRIBUTE_ERR DOM_INVALID_ACCESS_ERR DOM_INVALID_CHARACTER_ERR DOM_INVALID_MODIFICATION_ERR DOM_INVALID_STATE_ERR DOM_NAMESPACE_ERR DOM_NOT_FOUND_ERR DOM_NOT_SUPPORTED_ERR DOM_NO_DATA_ALLOWED_ERR DOM_NO_MODIFICATION_ALLOWED_ERR DOM_PHP_ERR DOM_SYNTAX_ERR DOM_VALIDATION_ERR DOM_WRONG_DOCUMENT_ERR Dom\HIERARCHY_REQUEST_ERR Dom\HTML_NO_DEFAULT_NS Dom\INDEX_SIZE_ERR Dom\INUSE_ATTRIBUTE_ERR Dom\INVALID_CHARACTER_ERR Dom\INVALID_MODIFICATION_ERR Dom\INVALID_STATE_ERR Dom\NAMESPACE_ERR Dom\NOT_FOUND_ERR Dom\NOT_SUPPORTED_ERR Dom\NO_DATA_ALLOWED_ERR Dom\NO_MODIFICATION_ALLOWED_ERR Dom\STRING_SIZE_ERR Dom\SYNTAX_ERR Dom\VALIDATION_ERR Dom\WRONG_DOCUMENT_ERR XML_ATTRIBUTE_CDATA XML_ATTRIBUTE_DECL_NODE XML_ATTRIBUTE_ENTITY XML_ATTRIBUTE_ENUMERATION XML_ATTRIBUTE_ID XML_ATTRIBUTE_IDREF XML_ATTRIBUTE_IDREFS XML_ATTRIBUTE_NMTOKEN XML_ATTRIBUTE_NMTOKENS XML_ATTRIBUTE_NODE XML_ATTRIBUTE_NOTATION XML_CDATA_SECTION_NODE XML_COMMENT_NODE XML_DOCUMENT_FRAG_NODE XML_DOCUMENT_NODE XML_DOCUMENT_TYPE_NODE XML_DTD_NODE XML_ELEMENT_DECL_NODE XML_ELEMENT_NODE XML_ENTITY_DECL_NODE XML_ENTITY_NODE XML_ENTITY_REF_NODE XML_HTML_DOCUMENT_NODE XML_LOCAL_NAMESPACE XML_NAMESPACE_DECL_NODE XML_NOTATION_NODE XML_PI_NODE XML_TEXT_NODE contained
+endif
+if index(g:php_syntax_extensions_enabled, "filter") >= 0 && index(g:php_syntax_extensions_disabled, "filter") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "filter") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "filter") < 0)
+" filter constants
+syn keyword phpConstants FILTER_CALLBACK FILTER_DEFAULT FILTER_FLAG_ALLOW_FRACTION FILTER_FLAG_ALLOW_HEX FILTER_FLAG_ALLOW_OCTAL FILTER_FLAG_ALLOW_SCIENTIFIC FILTER_FLAG_ALLOW_THOUSAND FILTER_FLAG_EMAIL_UNICODE FILTER_FLAG_EMPTY_STRING_NULL FILTER_FLAG_ENCODE_AMP FILTER_FLAG_ENCODE_HIGH FILTER_FLAG_ENCODE_LOW FILTER_FLAG_GLOBAL_RANGE FILTER_FLAG_HOSTNAME FILTER_FLAG_HOST_REQUIRED FILTER_FLAG_IPV4 FILTER_FLAG_IPV6 FILTER_FLAG_NONE FILTER_FLAG_NO_ENCODE_QUOTES FILTER_FLAG_NO_PRIV_RANGE FILTER_FLAG_NO_RES_RANGE FILTER_FLAG_PATH_REQUIRED FILTER_FLAG_QUERY_REQUIRED FILTER_FLAG_SCHEME_REQUIRED FILTER_FLAG_STRIP_BACKTICK FILTER_FLAG_STRIP_HIGH FILTER_FLAG_STRIP_LOW FILTER_FORCE_ARRAY FILTER_NULL_ON_FAILURE FILTER_REQUIRE_ARRAY FILTER_REQUIRE_SCALAR FILTER_SANITIZE_ADD_SLASHES FILTER_SANITIZE_EMAIL FILTER_SANITIZE_ENCODED FILTER_SANITIZE_FULL_SPECIAL_CHARS FILTER_SANITIZE_MAGIC_QUOTES FILTER_SANITIZE_NUMBER_FLOAT FILTER_SANITIZE_NUMBER_INT FILTER_SANITIZE_SPECIAL_CHARS FILTER_SANITIZE_STRING FILTER_SANITIZE_STRIPPED FILTER_SANITIZE_URL FILTER_THROW_ON_FAILURE FILTER_UNSAFE_RAW FILTER_VALIDATE_BOOL FILTER_VALIDATE_BOOLEAN FILTER_VALIDATE_DOMAIN FILTER_VALIDATE_EMAIL FILTER_VALIDATE_FLOAT FILTER_VALIDATE_INT FILTER_VALIDATE_IP FILTER_VALIDATE_MAC FILTER_VALIDATE_REGEXP FILTER_VALIDATE_URL INPUT_COOKIE INPUT_ENV INPUT_GET INPUT_POST INPUT_REQUEST INPUT_SERVER INPUT_SESSION contained
 endif
 if index(g:php_syntax_extensions_enabled, "gd") >= 0 && index(g:php_syntax_extensions_disabled, "gd") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "gd") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "gd") < 0)
 " gd constants
@@ -391,6 +395,12 @@ endif
 if index(g:php_syntax_extensions_enabled, "ereg") >= 0 && index(g:php_syntax_extensions_disabled, "ereg") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "ereg") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "ereg") < 0)
 " ereg functions
 syn keyword phpFunctions ereg ereg_replace eregi eregi_replace split spliti sql_regcase contained
+endif
+if index(g:php_syntax_extensions_enabled, "filter") >= 0 && index(g:php_syntax_extensions_disabled, "filter") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "filter") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "filter") < 0)
+" filter functions
+syn keyword phpFunctions filter_has_var filter_id filter_input filter_input_array filter_list filter_var filter_var_array contained
+" filter classes and interfaces
+syn keyword phpClasses Filter\FilterException Filter\FilterFailedException contained
 endif
 if index(g:php_syntax_extensions_enabled, "gd") >= 0 && index(g:php_syntax_extensions_disabled, "gd") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "gd") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "gd") < 0)
 " gd functions
