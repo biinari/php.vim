@@ -12,7 +12,6 @@ apt-get install -y \
   "php${PHP_VERSION}-gettext" \
   "php${PHP_VERSION}-iconv" \
   "php${PHP_VERSION}-mbstring" \
-  "php${PHP_VERSION}-mysql" \
   "php${PHP_VERSION}-mysqli" \
   "php${PHP_VERSION}-pdo" \
   "php${PHP_VERSION}-pgsql" \
@@ -26,18 +25,6 @@ apt-get install -y \
   "php${PHP_VERSION}-xmlreader" \
   "php${PHP_VERSION}-xmlwriter" \
   "php${PHP_VERSION}-zip"
-
-case $PHP_VERSION in
-  5.6 | 7.0 | 7.1)
-    apt-get install -y "php${PHP_VERSION}-mcrypt"
-    ;;
-esac
-
-case $PHP_VERSION in
-  5.6 | 7.0 | 7.1 | 7.2 | 7.3)
-    apt-get install -y "php${PHP_VERSION}-wddx"
-    ;;
-esac
 
 case $PHP_VERSION in
   5.* | 7.*)

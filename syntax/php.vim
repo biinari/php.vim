@@ -3,7 +3,7 @@
 "
 " @block('Last-modified')
 "
-" Mon, 15 Dec 2025 21:22:44 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
+" Tue, 16 Dec 2025 04:02:32 +0000, PHP 5.6.40, 7.3.33, 7.4.33, 8.0.30, 8.1.33, 8.2.29, 8.3.28, 8.4.15, 8.5.0
 "
 " @endblock
 "
@@ -227,7 +227,7 @@ syn keyword phpServerVars GATEWAY_INTERFACE SERVER_NAME SERVER_SOFTWARE SERVER_P
 " @block('Extensions')
 
 if ! exists("g:php_syntax_extensions_enabled")
-    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
+    let g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]
 endif
 if ! exists("g:php_syntax_extensions_disabled")
     let g:php_syntax_extensions_disabled = []
@@ -276,14 +276,6 @@ endif
 if index(g:php_syntax_extensions_enabled, "mbstring") >= 0 && index(g:php_syntax_extensions_disabled, "mbstring") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mbstring") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mbstring") < 0)
 " mbstring constants
 syn keyword phpConstants MB_CASE_FOLD MB_CASE_FOLD_SIMPLE MB_CASE_LOWER MB_CASE_LOWER_SIMPLE MB_CASE_TITLE MB_CASE_TITLE_SIMPLE MB_CASE_UPPER MB_CASE_UPPER_SIMPLE MB_ONIGURUMA_VERSION MB_OVERLOAD_MAIL MB_OVERLOAD_REGEX MB_OVERLOAD_STRING contained
-endif
-if index(g:php_syntax_extensions_enabled, "mcrypt") >= 0 && index(g:php_syntax_extensions_disabled, "mcrypt") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mcrypt") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mcrypt") < 0)
-" mcrypt constants
-syn keyword phpConstants MCRYPT_3DES MCRYPT_ARCFOUR MCRYPT_ARCFOUR_IV MCRYPT_BLOWFISH MCRYPT_BLOWFISH_COMPAT MCRYPT_CAST_128 MCRYPT_CAST_256 MCRYPT_CRYPT MCRYPT_DECRYPT MCRYPT_DES MCRYPT_DEV_RANDOM MCRYPT_DEV_URANDOM MCRYPT_ENCRYPT MCRYPT_ENIGNA MCRYPT_GOST MCRYPT_IDEA MCRYPT_LOKI97 MCRYPT_MARS MCRYPT_MODE_CBC MCRYPT_MODE_CFB MCRYPT_MODE_ECB MCRYPT_MODE_NOFB MCRYPT_MODE_OFB MCRYPT_MODE_STREAM MCRYPT_PANAMA MCRYPT_RAND MCRYPT_RC2 MCRYPT_RC6 MCRYPT_RIJNDAEL_128 MCRYPT_RIJNDAEL_192 MCRYPT_RIJNDAEL_256 MCRYPT_SAFER64 MCRYPT_SAFER128 MCRYPT_SAFERPLUS MCRYPT_SERPENT MCRYPT_SKIPJACK MCRYPT_THREEWAY MCRYPT_TRIPLEDES MCRYPT_TWOFISH MCRYPT_WAKE MCRYPT_XTEA contained
-endif
-if index(g:php_syntax_extensions_enabled, "mysql") >= 0 && index(g:php_syntax_extensions_disabled, "mysql") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mysql") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mysql") < 0)
-" mysql constants
-syn keyword phpConstants MYSQL_ASSOC MYSQL_BOTH MYSQL_CLIENT_COMPRESS MYSQL_CLIENT_IGNORE_SPACE MYSQL_CLIENT_INTERACTIVE MYSQL_CLIENT_SSL MYSQL_NUM contained
 endif
 if index(g:php_syntax_extensions_enabled, "mysqli") >= 0 && index(g:php_syntax_extensions_disabled, "mysqli") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mysqli") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mysqli") < 0)
 " mysqli constants
@@ -392,10 +384,6 @@ syn keyword phpFunctions Dom\import_simplexml dom_import_simplexml contained
 " dom classes and interfaces
 syn keyword phpClasses DOMAttr DOMCdataSection DOMCharacterData DOMChildNode DOMComment DOMConfiguration DOMDocument DOMDocumentFragment DOMDocumentType DOMDomError DOMElement DOMEntity DOMEntityReference DOMErrorHandler DOMException DOMImplementation DOMImplementationList DOMImplementationSource DOMLocator DOMNameList DOMNameSpaceNode DOMNamedNodeMap DOMNode DOMNodeList DOMNotation DOMParentNode DOMProcessingInstruction DOMStringExtend DOMStringList DOMText DOMTypeinfo DOMUserDataHandler DOMXPath Dom\AdjacentPosition Dom\Attr Dom\CDATASection Dom\CharacterData Dom\ChildNode Dom\Comment Dom\Document Dom\DocumentFragment Dom\DocumentType Dom\DtdNamedNodeMap Dom\Element Dom\Entity Dom\EntityReference Dom\HTMLCollection Dom\HTMLDocument Dom\HTMLElement Dom\Implementation Dom\NamedNodeMap Dom\NamespaceInfo Dom\Node Dom\NodeList Dom\Notation Dom\ParentNode Dom\ProcessingInstruction Dom\Text Dom\TokenList Dom\XMLDocument Dom\XPath contained
 endif
-if index(g:php_syntax_extensions_enabled, "ereg") >= 0 && index(g:php_syntax_extensions_disabled, "ereg") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "ereg") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "ereg") < 0)
-" ereg functions
-syn keyword phpFunctions ereg ereg_replace eregi eregi_replace split spliti sql_regcase contained
-endif
 if index(g:php_syntax_extensions_enabled, "filter") >= 0 && index(g:php_syntax_extensions_disabled, "filter") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "filter") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "filter") < 0)
 " filter functions
 syn keyword phpFunctions filter_has_var filter_id filter_input filter_input_array filter_list filter_var filter_var_array contained
@@ -437,14 +425,6 @@ endif
 if index(g:php_syntax_extensions_enabled, "mbstring") >= 0 && index(g:php_syntax_extensions_disabled, "mbstring") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mbstring") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mbstring") < 0)
 " mbstring functions
 syn keyword phpFunctions mb_check_encoding mb_chr mb_convert_case mb_convert_encoding mb_convert_kana mb_convert_variables mb_decode_mimeheader mb_decode_numericentity mb_detect_encoding mb_detect_order mb_encode_mimeheader mb_encode_numericentity mb_encoding_aliases mb_ereg mb_ereg_match mb_ereg_replace mb_ereg_replace_callback mb_ereg_search mb_ereg_search_getpos mb_ereg_search_getregs mb_ereg_search_init mb_ereg_search_pos mb_ereg_search_regs mb_ereg_search_setpos mb_eregi mb_eregi_replace mb_get_info mb_http_input mb_http_output mb_internal_encoding mb_language mb_lcfirst mb_list_encodings mb_ltrim mb_ord mb_output_handler mb_parse_str mb_preferred_mime_name mb_regex_encoding mb_regex_set_options mb_rtrim mb_scrub mb_send_mail mb_split mb_str_pad mb_str_split mb_strcut mb_strimwidth mb_stripos mb_stristr mb_strlen mb_strpos mb_strrchr mb_strrichr mb_strripos mb_strrpos mb_strstr mb_strtolower mb_strtoupper mb_strwidth mb_substitute_character mb_substr mb_substr_count mb_trim mb_ucfirst mbereg mbereg_match mbereg_replace mbereg_search mbereg_search_getpos mbereg_search_getregs mbereg_search_init mbereg_search_pos mbereg_search_regs mbereg_search_setpos mberegi mberegi_replace mbregex_encoding mbsplit contained
-endif
-if index(g:php_syntax_extensions_enabled, "mcrypt") >= 0 && index(g:php_syntax_extensions_disabled, "mcrypt") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mcrypt") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mcrypt") < 0)
-" mcrypt functions
-syn keyword phpFunctions mcrypt_cbc mcrypt_cfb mcrypt_create_iv mcrypt_decrypt mcrypt_ecb mcrypt_enc_get_algorithms_name mcrypt_enc_get_block_size mcrypt_enc_get_iv_size mcrypt_enc_get_key_size mcrypt_enc_get_modes_name mcrypt_enc_get_supported_key_sizes mcrypt_enc_is_block_algorithm mcrypt_enc_is_block_algorithm_mode mcrypt_enc_is_block_mode mcrypt_enc_self_test mcrypt_encrypt mcrypt_generic mcrypt_generic_deinit mcrypt_generic_end mcrypt_generic_init mcrypt_get_block_size mcrypt_get_cipher_name mcrypt_get_iv_size mcrypt_get_key_size mcrypt_list_algorithms mcrypt_list_modes mcrypt_module_close mcrypt_module_get_algo_block_size mcrypt_module_get_algo_key_size mcrypt_module_get_supported_key_sizes mcrypt_module_is_block_algorithm mcrypt_module_is_block_algorithm_mode mcrypt_module_is_block_mode mcrypt_module_open mcrypt_module_self_test mcrypt_ofb mdecrypt_generic contained
-endif
-if index(g:php_syntax_extensions_enabled, "mysql") >= 0 && index(g:php_syntax_extensions_disabled, "mysql") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mysql") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mysql") < 0)
-" mysql functions
-syn keyword phpFunctions mysql mysql_affected_rows mysql_client_encoding mysql_close mysql_connect mysql_data_seek mysql_db_name mysql_db_query mysql_dbname mysql_errno mysql_error mysql_escape_string mysql_fetch_array mysql_fetch_assoc mysql_fetch_field mysql_fetch_lengths mysql_fetch_object mysql_fetch_row mysql_field_flags mysql_field_len mysql_field_name mysql_field_seek mysql_field_table mysql_field_type mysql_fieldflags mysql_fieldlen mysql_fieldname mysql_fieldtable mysql_fieldtype mysql_free_result mysql_freeresult mysql_get_client_info mysql_get_host_info mysql_get_proto_info mysql_get_server_info mysql_info mysql_insert_id mysql_list_dbs mysql_list_fields mysql_list_processes mysql_list_tables mysql_listdbs mysql_listfields mysql_listtables mysql_num_fields mysql_num_rows mysql_numfields mysql_numrows mysql_pconnect mysql_ping mysql_query mysql_real_escape_string mysql_result mysql_select_db mysql_selectdb mysql_set_charset mysql_stat mysql_table_name mysql_tablename mysql_thread_id mysql_unbuffered_query contained
 endif
 if index(g:php_syntax_extensions_enabled, "mysqli") >= 0 && index(g:php_syntax_extensions_disabled, "mysqli") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "mysqli") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "mysqli") < 0)
 " mysqli functions
@@ -527,10 +507,6 @@ if index(g:php_syntax_extensions_enabled, "tokenizer") >= 0 && index(g:php_synta
 syn keyword phpFunctions token_get_all token_name contained
 " tokenizer classes and interfaces
 syn keyword phpClasses PhpToken contained
-endif
-if index(g:php_syntax_extensions_enabled, "wddx") >= 0 && index(g:php_syntax_extensions_disabled, "wddx") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "wddx") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "wddx") < 0)
-" wddx functions
-syn keyword phpFunctions wddx_add_vars wddx_deserialize wddx_packet_end wddx_packet_start wddx_serialize_value wddx_serialize_vars contained
 endif
 if index(g:php_syntax_extensions_enabled, "xml") >= 0 && index(g:php_syntax_extensions_disabled, "xml") < 0 && ( ! exists("b:php_syntax_extensions_enabled") || index(b:php_syntax_extensions_enabled, "xml") >= 0) && ( ! exists("b:php_syntax_extensions_disabled") || index(b:php_syntax_extensions_disabled, "xml") < 0)
 " xml functions
