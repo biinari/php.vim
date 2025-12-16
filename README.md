@@ -10,7 +10,7 @@ Versions
 
 `php.vim` should work with Vim 7.0 and newer. Also works with other flavours like NeoVim.
 
-Supported versions of PHP: `5.6` to `8.4`.
+Supported versions of PHP: `5.6` to `8.5`.
 
 Installation
 ------------
@@ -37,14 +37,14 @@ Configuration
 - `g:php_version_id`,
   `b:php_version_id`
   
-  Default: `g:php_version_id = 70300`
+  Default: `g:php_version_id = 80400`
   
   The PHP version the Vim syntax should adhere to. This currently determines how strict [Heredoc/Nowdoc syntax](https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.core.heredoc) should be. The format of the Vim variable follows the [PHP predefined constant `PHP_VERSION_ID`](https://www.php.net/manual/en/reserved.constants.php#constant.php-version-id).
 
 - `g:php_syntax_extensions_enabled`, `g:php_syntax_extensions_disabled`  
   `b:php_syntax_extensions_enabled`, `b:php_syntax_extensions_disabled`
 
-  Default: `g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mhash", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]`
+  Default: `g:php_syntax_extensions_enabled = ["bcmath", "bz2", "core", "curl", "date", "dom", "ereg", "filter", "gd", "gettext", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli", "openssl", "pcre", "pdo", "pgsql", "phar", "reflection", "session", "simplexml", "soap", "sockets", "spl", "sqlite3", "standard", "tokenizer", "wddx", "xml", "xmlreader", "xmlwriter", "zip", "zlib"]`
 
   A list of PHP extension names (lowercase) for which highlighting of built-in functions, constants, classes and interfaces is enabled / disabled.
 
